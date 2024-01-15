@@ -24,6 +24,20 @@ const textVariants = {
   }
 }
 
+const sliderVariants = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: "-220%",
+    transition:{
+      repeat: Infinity,
+      repeatType:"mirror",
+      duration:20,
+    },
+  },
+}
+
 const HeroSection = () => {
   return (
     <div className="hero">
@@ -40,9 +54,9 @@ const HeroSection = () => {
         <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" />
         </motion.div>
       </div>
-      <div className="sliddingTextContainer">
+      <motion.div className="sliddingTextContainer" variants={sliderVariants} initial="initial" animate="animate">
         Writer Content Creator Influenser
-      </div>
+      </motion.div>
       <div className="imageContainer">
         <img src="/hero.png" alt="profile-pic"/>
       </div>
